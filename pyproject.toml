@@ -1,0 +1,25 @@
+[project]
+name = "intern-day-2-backend"
+version = "0.1.0"
+description = "第二天练习：FastAPI 登录鉴权与四象限备忘录接口"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115,<1.0",
+    "uvicorn[standard]>=0.32,<1.0",
+    "bcrypt>=4.2,<5.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3,<9.0",
+    "httpx>=0.27,<1.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# 让 tests/ 里能直接 import app，不依赖安装成包。
+pythonpath = ["."]
+
+[tool.uv]
+# 这是个应用而不是库，uv 不需要把项目本身装进环境。
+package = false
