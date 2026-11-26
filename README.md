@@ -3,8 +3,8 @@
 第二天练习项目的后端仓库：Python + FastAPI 提供 JSON API，负责登录鉴权与四象限备忘录的数据读写。
 
 - 配套前端仓库：https://github.com/uurotation/intern-day-2-frontend
-- 配套 PR：待本仓库首次推送后补
-- 本次联调使用的前端分支/提交：待本仓库首次推送后补
+- 配套前端 PR：https://github.com/uurotation/intern-day-2-frontend/pull/1
+- 本次联调使用的前端分支/提交：`main` 的 `1dae45c`
 
 ## 一、项目主题与功能范围
 
