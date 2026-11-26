@@ -1,0 +1,20 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: intern-day-2-backend:local
+    container_name: intern-day-2-backend
+    ports:
+      - "8000:8000"
+    environment:
+      CORS_ORIGINS: "http://localhost:5173,http://127.0.0.1:5173"
+      SESSION_TTL_MINUTES: "120"
+      APP_DB_PATH: "/app/data/app.db"
+    volumes:
+      # 数据文件挂到命名卷，容器重建后账号和备忘都还在。
+      - api-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  api-data:

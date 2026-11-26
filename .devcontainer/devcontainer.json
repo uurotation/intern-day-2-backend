@@ -1,0 +1,25 @@
+{
+  "name": "intern-day-2-backend",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "mounts": [
+    "source=intern-day-2-backend-venv,target=${containerWorkspaceFolder}/.venv,type=volume"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "charliermarsh.ruff"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/workspaces/intern-day-2-backend/.venv/bin/python"
+      }
+    }
+  },
+  "forwardPorts": [8000],
+  "onCreateCommand": "sudo chown -R vscode:vscode .venv",
+  "postCreateCommand": "uv sync && uv run python -m app.seed",
+  "remoteUser": "vscode"
+}
